@@ -1,0 +1,35 @@
+# Common
+**/Thumbs.db
+**/*.log
+**/*.md
+**/*.php~
+**/._*
+**/.DS_Store
+**/.editorconfig
+**/.env.local
+**/.env.local.php
+**/.env.*.local
+**/.php_cs.cache
+**/*.sqlite
+**/*.sqlite-journal
+
+# Docker
+**/docker-compose.yml
+**/Dockerfile
+storage/
+
+# Git
+**/.git
+**/.gitattributes
+**/.gitignore
+**/.gitmodules
+
+# JetBrains
+**/.idea
+
+# Symfony
+app/config/secrets/prod/prod.decrypt.private.php
+app/config/parameters.yml
+app/var
+app/vendor
+app/public/bundles

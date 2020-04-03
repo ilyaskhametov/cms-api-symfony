@@ -1,0 +1,26 @@
+FROM php:7.4.4-fpm-alpine
+
+RUN apk update \
+    && apk add --no-cache \
+        autoconf \
+        g++ \
+        make \
+        shadow \
+        unzip \
+        libmcrypt-dev \
+        libzip-dev \
+        imagemagick-dev \
+        postgresql-dev \
+        oniguruma-dev \
+        php7-tidy \
+    && pecl install imagick \
+    && docker-php-ext-enable imagick \
+    && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
+    && docker-php-ext-configure zip \
+    && docker-php-ext-install mbstring pdo pdo_pgsql pgsql zip
+
+RUN curl -sS https://getcomposer.org/installer | php \
+    && mv composer.phar /usr/local/bin \
+    && ln -s /usr/local/bin/composer.phar /usr/local/bin/composer
+
+RUN rm -rf /var/www/html

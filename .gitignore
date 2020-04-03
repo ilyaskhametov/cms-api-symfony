@@ -1,0 +1,7 @@
+!.gitignore
+.idea/
+storage/
+.DS_Store
+.phpstorm.meta.php
+.env
+dev_env.iml
