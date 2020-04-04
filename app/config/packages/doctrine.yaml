@@ -4,7 +4,7 @@ doctrine:
         dbname: '%env(resolve:DATABASE_NAME)%'
         host: '%env(resolve:DATABASE_HOST)%'
         port: '%env(resolve:DATABASE_PORT)%'
-        user: '%env(resolve:DATABASE_USER)%'
+        user: '%env(resolve:DATABASE_USERNAME)%'
         password: '%env(resolve:DATABASE_PASSWORD)%'
     orm:
         auto_generate_proxy_classes: true
